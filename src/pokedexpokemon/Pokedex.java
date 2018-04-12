@@ -37,7 +37,7 @@ public class Pokedex extends javax.swing.JFrame {
     ////////////////////////////////////////
     
     //hashmap para almacenar el resultado de la consulta
-    HashMap <String,Pokedex> listaPokemons = new HashMap();
+    HashMap <String,Pokemon> listaPokemons = new HashMap();
     
     /**
      * Creates new form VentanaPokedex
@@ -64,7 +64,7 @@ public class Pokedex extends javax.swing.JFrame {
     }
     
     private void escribeDatos(){
-        Pokedex p = listaPokemons.get(String.valueOf(contador+1));
+        Pokemon p = listaPokemons.get(String.valueOf(contador+1));
         if (p != null){
             jLabel1.setText(p.nombre);
         }
@@ -96,7 +96,7 @@ public class Pokedex extends javax.swing.JFrame {
         //conexion a la base de datos//////////////////
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1/test","root","root");
+            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1/test","root","");
             estado = conexion.createStatement();
             resultadoConsulta = estado.executeQuery("Select * from pokemon");
             //cargo el resultado de la query en mi hashmap
@@ -132,6 +132,9 @@ public class Pokedex extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(240, 240, 240));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
