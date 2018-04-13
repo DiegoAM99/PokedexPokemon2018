@@ -50,8 +50,8 @@ public class Pokedex extends javax.swing.JFrame {
         g2.setColor(Color.YELLOW);
         g2.fillRect(0, 0, alto, ancho);
         g2.drawImage(imagenPokemons,
-                0,
-                0,
+                20,
+                20,
                 ancho,
                 alto,
                 96*columna,
@@ -69,14 +69,14 @@ public class Pokedex extends javax.swing.JFrame {
             jLabel1.setText(p.nombre);
         }
         else {
-            jLabel1.getClass().getResource("pokedex.png");
+            jLabel1.getText();
         }
     }
     @Override
     public void paint(Graphics g){
         super.paintComponents(g);
         Graphics2D g2 = (Graphics2D) jPanel.getGraphics();
-        g2.drawImage(buffer, 0, 0,alto,ancho, null);
+        g2.drawImage(buffer, 100, 120,alto,ancho, null);
     }
     
     public Pokedex() {
@@ -146,7 +146,7 @@ public class Pokedex extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 20, 20));
 
         jButton2.setText("derecha");
         jButton2.setOpaque(false);
@@ -160,23 +160,23 @@ public class Pokedex extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 20, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedexpokemon/Pokedex.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 280));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedexpokemon/pokedex.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 740, 460));
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 180, 170));
+        getContentPane().add(jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 330, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
